@@ -1,3 +1,5 @@
+
+
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
@@ -5,12 +7,18 @@
 
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  
+
+  background-color: var(--primario-claro);
+}
+navbar{
+  background-color:var(#F3F7F8);
 }
 
 a {
@@ -75,9 +83,6 @@ button:focus-visible {
   color: white;
 }
 
-/*CSS PARA REGISTRO*/
-
-
 /* Estilos generales */
 .text-center {
   font-size: x-large;
@@ -86,8 +91,8 @@ button:focus-visible {
 
 /* Imagen dentro de la columna */
 .image-container img {
-  height: 400%;
-  width: 850px;
+  max-height: 400px; /* Ajuste más controlado para la altura */
+  width: 100%; /* Ajuste a la anchura del contenedor */
   object-fit: cover; 
   border-radius: 10px; 
 }
@@ -100,15 +105,28 @@ button:focus-visible {
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   margin-top: 20px; 
-  max-width: 400px; /* O cualquier valor que prefieras */
-  width: 100%;
-  }
-  
+  max-width: 400px; /* Controlando el tamaño máximo */
+  width: 100%; /* Asegura que ocupe el 100% en pantallas pequeñas */
+}
 
+/* Estilo para el modal */
+.custom-modal {
+  max-width: 75%; 
+}
+
+.modal-body {
+  display: flex;
+}
+
+.modal-body .col-md-6 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
 /* Botón personalizado */
 .custom-button {
-  background-color: #006374; 
+  background-color: var(--primario); 
   color: white; 
   width: 100%; 
   padding: 10px;
@@ -129,28 +147,57 @@ button:focus-visible {
   justify-content: center; 
 }
 
+.footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: var(--primario); 
+  color: white;
+  text-align: left; 
+  padding: 10px 20px; /* Añade espacio arriba-abajo y a los lados */
+  z-index: 100; 
+}
 
-/* Ajustes responsivos */
+.custom-button h6 {
+  margin: 0;
+  padding: 5px 0;
+}
+
+
+
+/* Ajustes responsivos para pantallas pequeñas */
 @media (max-width: 768px) {
-  .form-container {
-    margin-top: 20px;
-    width: 100%; 
+  /* Hacer que el modal ocupe casi todo el ancho en pantallas pequeñas */
+  .custom-modal {
+    max-width: 100%; /* El modal ocupará el 100% del ancho en pantallas pequeñas */
+    margin: 10px;
   }
 
+  /* Hacer que las columnas (imagen y formulario) se apilen verticalmente */
+  .modal-body {
+    flex-direction: column;
+  }
+
+  /* Ajustar el tamaño de la imagen y del formulario en pantallas pequeñas */
   .image-container img {
+    max-height: 200px; /* Reducir la altura para que se vea mejor en pantallas pequeñas */
+  }
+
+  /* Ajustar el ancho del formulario para pantallas pequeñas */
+  .form-container {
     width: 100%; 
-    height: auto; 
+    margin-top: 10px; /* Un pequeño margen entre la imagen y el formulario */
   }
 }
 
 @media (min-width: 768px) {
+  /* En pantallas medianas y grandes, la imagen y el formulario están lado a lado */
   .form-container {
     width: 60%; 
   }
 
   .image-container {
-    display: block; 
     width: 40%; 
   }
 }
-
