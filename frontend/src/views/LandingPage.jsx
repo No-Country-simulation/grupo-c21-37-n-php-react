@@ -10,6 +10,9 @@ export default function LandingPage() {
         <div className="container">
 
             <section>
+            <div style={{ display: 'flex', justifyContent: '', alignItems: 'center' }}>
+  <img src={animal2} alt="animal2" style={{ marginRight: '10px' }} />
+</div>
                 <img src={animal2} alt="animal2" style={{ alignContent:"flex"  }} />
                 <h1>Te Ayudamos a encontrar <br />a tu mascota</h1>
                 <button className="custom-button">Perdí una mascota</button>
