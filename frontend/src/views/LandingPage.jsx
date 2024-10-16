@@ -10,20 +10,26 @@ export default function LandingPage() {
         <div className="container">
 
             <section>
-            <div style={{ display: 'flex', justifyContent: '', alignItems: 'center' }}>
-  <img src={animal2} alt="animal2" style={{ marginRight: '10px' }} />
-</div>
-                <img src={animal2} alt="animal2" style={{ alignContent:"flex"  }} />
-                <h1>Te Ayudamos a encontrar <br />a tu mascota</h1>
+
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+
+                    <img src={animal2} alt="animal2" style={{ width: '100px' }} />
+
+
+                    <h1 style={{ textAlign: 'center' }}>Te Ayudamos a encontrar <br />a tu mascota</h1>
+
+
+                    <img src={animal2} alt="animal2" style={{ width: '100px' }} />
+                </div>
+
                 <button className="custom-button">Perdí una mascota</button>
-                <img src={animal2} alt="animal2" style={{ marginLeft: "0px" }} />
             </section>
             <section>
                 <div className="container">
                     <h2>Mascotas Perdidas</h2>
 
                     <div className="card" style={{ width: '18rem' }}>
-                    <img src={mascota1} className="card-img-top" alt="Imagen de mascota perdida" />
+                        <img src={mascota1} className="card-img-top" alt="Imagen de mascota perdida" />
                         <div className="card-body">
                             <h5 className="card-title">Card title</h5>
                             <p className="card-text">
