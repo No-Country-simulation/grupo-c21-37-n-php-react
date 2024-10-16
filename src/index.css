@@ -1,0 +1,203 @@
+
+
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  
+
+  background-color: var(--primario-claro);
+}
+navbar{
+  background-color:var(#F3F7F8);
+}
+
+a {
+  font-weight: 500;
+  color: #646cff;
+  text-decoration: inherit;
+}
+a:hover {
+  color: #535bf2;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #1a1a1a;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+button:hover {
+  border-color: #646cff;
+}
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+  }
+  a:hover {
+    color: #747bff;
+  }
+  button {
+    background-color: #f9f9f9;
+  }
+}
+.form-container {
+  float: right;
+  width: 30%;
+}
+.custom-button {
+  background-color: #006374; /* Cambia el color aquí */
+  color: white;
+}
+
+/* Estilos generales */
+.text-center {
+  font-size: x-large;
+  color: #006374; 
+}
+
+/* Imagen dentro de la columna */
+.image-container img {
+  max-height: 400px; /* Ajuste más controlado para la altura */
+  width: 100%; /* Ajuste a la anchura del contenedor */
+  object-fit: cover; 
+  border-radius: 10px; 
+}
+
+/* Contenedor del formulario */
+.form-container {
+  background-color: #f8f9fae2;
+  padding: 20px;
+  border: 1px solid #ced4da;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-top: 20px; 
+  max-width: 400px; /* Controlando el tamaño máximo */
+  width: 100%; /* Asegura que ocupe el 100% en pantallas pequeñas */
+}
+
+/* Estilo para el modal */
+.custom-modal {
+  max-width: 75%; 
+}
+
+.modal-body {
+  display: flex;
+}
+
+.modal-body .col-md-6 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Botón personalizado */
+.custom-button {
+  background-color: var(--primario); 
+  color: white; 
+  width: 100%; 
+  padding: 10px;
+  border: none;
+  border-radius: 5px; 
+  cursor: pointer;
+}
+
+.custom-button:hover {
+  background-color: #004a54; 
+}
+
+/* Centrado de la página */
+.main-container {
+  min-height: 100vh; 
+  display: flex;
+  align-items: center; 
+  justify-content: center; 
+}
+
+.footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: var(--primario); 
+  color: white;
+  text-align: left; 
+  padding: 10px 20px; /* Añade espacio arriba-abajo y a los lados */
+  z-index: 100; 
+}
+
+.custom-button h6 {
+  margin: 0;
+  padding: 5px 0;
+}
+
+
+
+/* Ajustes responsivos para pantallas pequeñas */
+@media (max-width: 768px) {
+  /* Hacer que el modal ocupe casi todo el ancho en pantallas pequeñas */
+  .custom-modal {
+    max-width: 100%; /* El modal ocupará el 100% del ancho en pantallas pequeñas */
+    margin: 10px;
+  }
+
+  /* Hacer que las columnas (imagen y formulario) se apilen verticalmente */
+  .modal-body {
+    flex-direction: column;
+  }
+
+  /* Ajustar el tamaño de la imagen y del formulario en pantallas pequeñas */
+  .image-container img {
+    max-height: 200px; /* Reducir la altura para que se vea mejor en pantallas pequeñas */
+  }
+
+  /* Ajustar el ancho del formulario para pantallas pequeñas */
+  .form-container {
+    width: 100%; 
+    margin-top: 10px; /* Un pequeño margen entre la imagen y el formulario */
+  }
+}
+
+@media (min-width: 768px) {
+  /* En pantallas medianas y grandes, la imagen y el formulario están lado a lado */
+  .form-container {
+    width: 60%; 
+  }
+
+  .image-container {
+    width: 40%; 
+  }
+}
