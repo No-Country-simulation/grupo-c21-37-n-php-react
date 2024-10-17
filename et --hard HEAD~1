@@ -1,0 +1,23 @@
+[33m03af90a[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mcristian-env-db[m[33m, [m[1;31morigin/dev[m[33m)[m Merge pull request #4 from No-Country-simulation/romina
+[33mab94850[m[33m ([m[1;31morigin/romina[m[33m)[m errores
+[33mf85aff7[m se agrega navbar y landingpage
+[33m05594c2[m[33m ([m[1;32mromina[m[33m)[m restauro carpeta front y back
+[33m683a844[m creacion de components y landingpage
+[33m266fbf9[m Merge branch 'romina' of https://github.com/No-Country-simulation/grupo-c21-37-n-php-react into romina
+[33m6cb0945[m creacion de components y landingpage
+[33meec4734[m creacion de components y landingpage
+[33m25732c1[m Merge pull request #2 from No-Country-simulation/cristian-env-db
+[33m768450e[m[33m ([m[1;31morigin/cristian-env-db[m[33m)[m models, controllers, migrations
+[33m6591939[m creacion de modal de registro y login
+[33m6641edf[m fix package
+[33mad955d8[m borron
+[33mf3e4af4[m fix package
+[33m6a9f180[m slider añadido
+[33m251d561[m eliminacion de carpeta registro.css
+[33m955049c[m eliminacion de carpeta front end y cambio de carperta node module
+[33m4764329[m[33m ([m[1;31morigin/main[m[33m, [m[1;32mmain[m[33m, [m[1;32mdev[m[33m)[m roles separados
+[33me2eba85[m Merge branch 'main' of https://github.com/No-Country-simulation/grupo-c21-37-n-php-react
+[33m8a08e40[m creacion de registro
+[33m426c409[m Merge branch 'main' of github.com:No-Country-simulation/grupo-c21-37-n-php-react
+[33m82bd717[m[33m ([m[1;32mmaster[m[33m)[m Init Laravel
+[33m4e93564[m Crear Readme
