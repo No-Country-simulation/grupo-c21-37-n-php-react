@@ -114,7 +114,7 @@ export default function Registro() {
                       </Link>
                     </div>
 
-                    <div className="d-grid">
+                    <div className="adecuada">
                       <button
                         type="submit"
                         className="custom-button"
@@ -129,6 +129,8 @@ export default function Registro() {
           </div>
         </div>
       </div>
+      
     </>
+    
   );
 }

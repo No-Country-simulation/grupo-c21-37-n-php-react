@@ -1,48 +1,77 @@
+:root {
+  --primario: #006374;
+  --primario-claro: #D6F9FF;
+  --primario-claro-1: #D6F9FF;
+  --secundario: #D6F9FF;
+  --secundario-claro: #ADF8FF;
+  --terciario: #25C5DA;
+  --terciario-claro: #96E2ED;
+  --gris-oscuro: #292929;
+  --gris: #4D4D4D;
+  --gris-claro-1: #767676;
+  --gris-claro-2: #A1A1A1;
+  --gris-claro-3: #EAEAEA;
+  --fondo-completo: #F3F7F8;
+}
 
 
+/* Root Variables and General Styles */
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
-
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
-  
-
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  
-
-  background-color: var(--primario-claro);
-}
-navbar{
-  background-color:var(#F3F7F8);
+  background-color: var(--fondo-completo);
 }
 
+/* Body Styles */
+.body {
+  background-color: #F3F7F8; 
+  margin: 0;
+  display: flex;
+  ;
+  min-height: 100vh;
+}
+
+/*landingpage*/
+.landingpage {
+  background-color: var(--fondo-completo);
+  display: contents;
+ 
+ 
+}
+
+/* Navbar */
+.navbar {
+  background-color: white;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Link Styles */
 a {
   font-weight: 500;
   color: #646cff;
   text-decoration: inherit;
 }
+
 a:hover {
   color: #535bf2;
 }
 
-body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
-}
-
+/* Headings */
 h1 {
   font-size: 3.2em;
   line-height: 1.1;
 }
 
+/* Button Styles */
 button {
   border-radius: 8px;
   border: 1px solid transparent;
@@ -54,52 +83,32 @@ button {
   cursor: pointer;
   transition: border-color 0.25s;
 }
+
 button:hover {
   border-color: #646cff;
 }
+
 button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
-}
-.form-container {
-  float: right;
-  width: 30%;
-}
+/* Custom Button Styles */
 .custom-button {
-  background-color: #006374; /* Cambia el color aquí */
-  color: white;
+  background-color: var(--primario); 
+  color: white; 
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  width: auto; /* Ajusta el ancho según el contenido */
+  max-width: 200px; /* Ancho máximo si quieres limitarlo */
+  text-align: center;
 }
 
-/* Estilos generales */
-.text-center {
-  font-size: x-large;
-  color: #006374; 
-}
-
-/* Imagen dentro de la columna */
-.image-container img {
-  max-height: 400px; /* Ajuste más controlado para la altura */
-  width: 100%; /* Ajuste a la anchura del contenedor */
-  object-fit: cover; 
-  border-radius: 10px; 
-}
-
-/* Contenedor del formulario */
+/* Form Container */
 .form-container {
-  background-color: #f8f9fae2;
+  background-color: var(--fondo-completo);
   padding: 20px;
   border: 1px solid #ced4da;
   border-radius: 10px;
@@ -109,37 +118,63 @@ button:focus-visible {
   width: 100%; /* Asegura que ocupe el 100% en pantallas pequeñas */
 }
 
-/* Estilo para el modal */
-.custom-modal {
-  max-width: 75%; 
+/* Image Container */
+.image-container img {
+  max-height: 400px; /* Ajuste más controlado para la altura */
+  width: 100%; /* Ajuste a la anchura del contenedor */
+  object-fit: cover; 
+  border-radius: 10px; 
 }
 
-.modal-body {
+/* Card Styles */
+.card {
   display: flex;
-}
-
-.modal-body .col-md-6 {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-/* Botón personalizado */
-.custom-button {
-  background-color: var(--primario); 
-  color: white; 
-  width: 100%; 
+  align-items: flex-start;
   padding: 10px;
-  border: none;
-  border-radius: 5px; 
-  cursor: pointer;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
 }
 
-.custom-button:hover {
-  background-color: #004a54; 
+.card-img-left {
+  margin-right: 15px;
+  border-radius: 5px;
 }
 
-/* Centrado de la página */
+.card-body {
+  flex: 1;
+}
+
+.card-title {
+  font-size: 1.25rem;
+}
+
+.card-text {
+  font-size: 1rem;
+}
+
+.card-link {
+  color: var(--primario);
+  font-weight: bold;
+  text-decoration: none;
+}
+
+/* Container and Main Layout */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.mt-5 {
+  margin-top: 3rem;
+}
+
+.row {
+  margin-bottom: 2rem;
+}
+
+/* Main Container for Centering */
 .main-container {
   min-height: 100vh; 
   display: flex;
@@ -147,44 +182,34 @@ button:focus-visible {
   justify-content: center; 
 }
 
+/* Footer Styles */
 .footer {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  background-color: var(--primario); 
+  background-color: var(--primario);
   color: white;
-  text-align: left; 
-  padding: 10px 20px; /* Añade espacio arriba-abajo y a los lados */
-  z-index: 100; 
-}
-
-.custom-button h6 {
+  padding: 10px 20px;
+  width: 100vw; /* Cambiar a viewport width para asegurar todo el ancho de la ventana */
+  text-align: left;
   margin: 0;
-  padding: 5px 0;
+  position: absolute;
+  left: 0;
+  box-sizing: border-box; /* Asegura que el padding no afecte el ancho total */
 }
 
-
-
-/* Ajustes responsivos para pantallas pequeñas */
+/* Responsive Styles */
 @media (max-width: 768px) {
-  /* Hacer que el modal ocupe casi todo el ancho en pantallas pequeñas */
   .custom-modal {
     max-width: 100%; /* El modal ocupará el 100% del ancho en pantallas pequeñas */
     margin: 10px;
   }
 
-  /* Hacer que las columnas (imagen y formulario) se apilen verticalmente */
   .modal-body {
     flex-direction: column;
   }
 
-  /* Ajustar el tamaño de la imagen y del formulario en pantallas pequeñas */
   .image-container img {
     max-height: 200px; /* Reducir la altura para que se vea mejor en pantallas pequeñas */
   }
 
-  /* Ajustar el ancho del formulario para pantallas pequeñas */
   .form-container {
     width: 100%; 
     margin-top: 10px; /* Un pequeño margen entre la imagen y el formulario */
@@ -192,12 +217,27 @@ button:focus-visible {
 }
 
 @media (min-width: 768px) {
-  /* En pantallas medianas y grandes, la imagen y el formulario están lado a lado */
   .form-container {
     width: 60%; 
   }
 
   .image-container {
     width: 40%; 
+  }
+}
+
+/* Dark Mode Styles */
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: var(--fondo-completo);
+  }
+
+  a:hover {
+    color: #747bff;
+  }
+
+  button {
+    background-color: var(--fondo-completo);
   }
 }

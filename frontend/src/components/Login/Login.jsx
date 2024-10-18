@@ -81,7 +81,7 @@ export default function Login() {
                       </Link>
                     </div>
 
-                    <div className="d-grid">
+                    <div className="adecuada">
                       <button
                         type="submit"
                         className="custom-button"
