@@ -2,7 +2,7 @@ import React from "react";
 import Logo from '../../assets/Logo.svg';
 import LoginModal from "../Login/Login"; // Importa el modal de login
 import RegistroModal from "../Registro/Registro"; // Importa el modal de registro
-import "../../index.css";
+import "../../App";
 
 export default function Nav() {
   return (

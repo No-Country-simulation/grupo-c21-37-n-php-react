@@ -7,8 +7,8 @@ import Footer from './components/Footer/Footer';
 import LandingPage from './views/LandingPage';
 import Registro from './components/Registro/Registro'; // Ruta del componente Registro
 import Login from './components/Login/Login'; // Ruta del componente Login
-import './styles/Styles.css'; // Importa tu archivo de variables globales
-import 'bootstrap/dist/css/bootstrap.min.css'; // Importa Bootstrap
+import Dashboard from './views/Dashboard';
+
 
 function App() {
   return (
@@ -16,6 +16,7 @@ function App() {
       <Nav />
       <Routes>
         <Route path="/" element={<LandingPage />} />
+        <Route path="/dashboard" element={<Dashboard />}/>
         <Route path="/register" element={<Registro />} />
         <Route path="/login" element={<Login />} />
       </Routes>
