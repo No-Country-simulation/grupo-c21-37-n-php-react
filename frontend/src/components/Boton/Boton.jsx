@@ -1,4 +1,5 @@
 import React from 'react'
+import "../../App";
 
 export default function Boton({name}) {
     return (
