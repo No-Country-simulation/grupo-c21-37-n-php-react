@@ -1,8 +1,40 @@
-import React, { useRef } from 'react';
+import { createRef, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js'; // Asegúrate de tener Bootstrap JS
+import clienteAxios from '../../config/axios'
+import Alerta from '../Alerta';
 
 export default function Registro() {
+
+  const nameRef = createRef();
+  const lastnameRef = createRef();
+  const emailRef = createRef();
+  const passwordRef = createRef();
+  const confirmpasswordRef = createRef();
+
+  const [errores, setErrores] = useState([])
+
+  const handleSubmit = async e => {
+    e.preventDefault();
+
+    const datos = {
+      name: nameRef.current.value,
+      lastname: lastnameRef.current.value,
+      email: emailRef.current.value,
+      password: passwordRef.current.value,
+      confirmpassword: confirmpasswordRef.current.value
+    }
+
+    try {
+      const respuesta = await clienteAxios.post('/api/registro', datos);
+      console.log(respuesta);
+    } catch (error) {
+      console.log(error);
+      setErrores(Object.values(error.response.data.errors));
+      
+    }
+  }
+
   const modalRef = useRef(null); // Referencia para el modal
 
   // Función para cerrar el modal
@@ -19,6 +51,7 @@ export default function Registro() {
   return (
     <>
       {/* Modal de Registro */}
+      
       <div
         className="modal fade"
         id="registroModal"
@@ -51,7 +84,13 @@ export default function Registro() {
 
                 {/* Columna para el formulario */}
                 <div className="col-md-6">
-                  <form>
+                  <form
+                  onSubmit={handleSubmit} noValidate
+                  >
+
+                    { errores ? errores.map(error => <Alerta key={error}>{error}</Alerta>) : null }
+
+
                     <div className="mb-3">
                       <label htmlFor="name" className="form-label">Nombre</label>
                       <input
@@ -59,6 +98,7 @@ export default function Registro() {
                         className="form-control"
                         id="name"
                         name="name"
+                        ref={nameRef}
                         required
                       />
                     </div>
@@ -70,6 +110,7 @@ export default function Registro() {
                         className="form-control"
                         id="lastname"
                         name="lastname"
+                        ref={lastnameRef}
                         required
                       />
                     </div>
@@ -81,6 +122,7 @@ export default function Registro() {
                         className="form-control"
                         id="email"
                         name="email"
+                        ref={emailRef}
                         required
                       />
                     </div>
@@ -92,17 +134,19 @@ export default function Registro() {
                         className="form-control"
                         id="password"
                         name="password"
+                        ref={passwordRef}
                         required
                       />
                     </div>
 
                     <div className="mb-3">
-                      <label htmlFor="repeatPassword" className="form-label">Repetir Contraseña</label>
+                      <label htmlFor="confirmpassword" className="form-label">Repetir Contraseña</label>
                       <input
                         type="password"
                         className="form-control"
-                        id="repeatPassword"
-                        name="repeatPassword"
+                        id="confirmpassword"
+                        name="confirmpassword"
+                        ref={confirmpasswordRef}
                         required
                       />
                     </div>
@@ -129,8 +173,9 @@ export default function Registro() {
           </div>
         </div>
       </div>
-      
+
     </>
-    
+
   );
 }
+

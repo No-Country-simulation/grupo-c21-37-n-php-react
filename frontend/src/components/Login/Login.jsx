@@ -1,8 +1,37 @@
-import React, { useRef } from "react";
+import { createRef, useRef, useState } from 'react';
 import { Link } from "react-router-dom";
 import "bootstrap/dist/js/bootstrap.bundle.min.js"; // Asegúrate de tener Bootstrap JS
+import clienteAxios from '../../config/axios'
+import Alerta from '../Alerta';
+
 
 export default function Login() {
+
+  const emailRef = createRef();
+  const passwordRef = createRef();
+
+  const [errores, setErrores] = useState([])
+
+  const handleSubmit = async e => {
+    e.preventDefault();
+
+    const datos = {
+      email: emailRef.current.value,
+      password: passwordRef.current.value,
+    }
+
+    try {
+      const respuesta = await clienteAxios.post('/api/login', datos);
+      console.log(respuesta);
+    } catch (error) {
+      console.log(error);
+      setErrores(Object.values(error.response.data.errors));
+      
+    }
+  }
+
+
+
   const modalRef = useRef(null); // Creamos una referencia al modal
 
   // Función para cerrar el modal
@@ -51,7 +80,13 @@ export default function Login() {
 
                 {/* Columna para el formulario */}
                 <div className="col-md-6">
-                  <form>
+                  <form
+                  onSubmit={handleSubmit}
+                  noValidate
+                  >
+                    
+                    { errores ? errores.map(error => <Alerta key={error}>{error}</Alerta>) : null }
+                    
                     <div className="mb-3">
                       <label htmlFor="email" className="form-label">Correo Electrónico</label>
                       <input
@@ -60,6 +95,7 @@ export default function Login() {
                         id="email"
                         name="email"
                         required
+                        ref={emailRef}
                       />
                     </div>
 
@@ -71,6 +107,7 @@ export default function Login() {
                         id="password"
                         name="password"
                         required
+                        ref={passwordRef}
                       />
                     </div>
 
