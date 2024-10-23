@@ -41,6 +41,16 @@ class AuthController extends Controller
                 'errors' => ['El email o el password son incorrectos']
             ], 422);
         }
+
+            // Autenticar al usuario
+            $user = Auth::user();
+
+                    // Retornar respuesta
+        return [
+            'token' => $user -> createToken ('token') -> plainTextToken,
+            'user' => $user
+        ];
+
     }
     public function logout (Request $request){
 

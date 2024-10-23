@@ -1,16 +1,14 @@
-import React from "react";
-import Logo from '../../assets/Logo.svg';
-import LoginModal from "../Login/Login"; // Importa el modal de login
-import RegistroModal from "../Registro/Registro"; // Importa el modal de registro
-import "../../App";
+import { Outlet } from "react-router-dom";
+import Logo from '../assets/Logo.svg';
+import { Link } from "react-router-dom";
 
-export default function Nav() {
+export default function Layout() {
   return (
     <>
       {/* Navbar */}
       <nav className="navbar navbar-expand-lg navbar-light bg-light fixed-top">
         <div className="container-fluid">
-          <img src={Logo}  alt="Logo" style={{ width: '100px', marginRight: '25px' }}/>
+          <img src={Logo} alt="Logo" style={{ width: '100px', marginRight: '25px' }} />
           <a className="navbar-brand" href="/">Perdidos</a>
           <a className="navbar-brand" href="/" >Adoptados</a>
           <a className="navbar-brand" href="/">Sobre Nosotros</a>
@@ -32,32 +30,38 @@ export default function Nav() {
                 {/* Botón para abrir el modal de Registro */}
                 <button
                   className="custom-button"
-                  data-bs-toggle="modal"
-                  data-bs-target="#registroModal"
                 >
-                  Registrarse
+                  <Link to="/registrarse">
+                    Regístrate
+                  </Link>
                 </button>
               </li>
               <li className="nav-item ms-2">
                 {/* Botón para abrir el modal de Iniciar Sesión */}
                 <button
                   className="custom-button"
-                  data-bs-toggle="modal"
-                  data-bs-target="#loginModal"
                 >
-                  Iniciar Sesión
+                  <Link to="/login">
+                    Iniciar Sesión
+                  </Link>
                 </button>
               </li>
             </ul>
           </div>
         </div>
       </nav>
-
-      {/* Modal para Iniciar Sesión */}
-      <LoginModal />
-
-      {/* Modal para Registrarse */}
-      <RegistroModal />
+      <Outlet />
+      <footer className="footer">
+        <nav className="custom-button" data-bs-theme="dark">
+          <h6>Contáctanos</h6>
+        </nav>
+        <nav className="custom-button" data-bs-theme="dark">
+          <h6>Correo</h6>
+        </nav>
+        <nav className="custom-button" data-bs-theme="dark">
+          <h6>Teléfono</h6>
+        </nav>
+      </footer>
     </>
   );
 }

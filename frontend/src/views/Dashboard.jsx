@@ -3,7 +3,6 @@ import "../App.css";
 import mascota1 from "../assets/images/mascota1.jpg";
 import mascota2 from "../assets/images/mascota2.jpg";
 import mascota3 from "../assets/images/mascota3.jpg";
-import Footer from "../components/Footer/Footer";
 
 export default function Dashboard() {
     // Estado para los filtros
@@ -248,9 +247,6 @@ export default function Dashboard() {
                     </section>
                 </div>
             </div>
-
-            {/* Footer */}
-            <Footer />
         </div>
     );
 }
