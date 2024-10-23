@@ -8,10 +8,12 @@ export default function Layout() {
       {/* Navbar */}
       <nav className="navbar navbar-expand-lg navbar-light bg-light fixed-top">
         <div className="container-fluid">
+        <Link to="/">
           <img src={Logo} alt="Logo" style={{ width: '100px', marginRight: '25px' }} />
-          <a className="navbar-brand" href="/">Perdidos</a>
+        </Link>
+          <a className="navbar-brand" href="/dashboard">Perdidos</a>
           <a className="navbar-brand" href="/" >Adoptados</a>
-          <a className="navbar-brand" href="/">Sobre Nosotros</a>
+          <a className="navbar-brand" href="/nosotros">Sobre Nosotros</a>
           <a className="navbar-brand" href="/">Casos de Éxito</a>
           <button
             className="navbar-toggler"
@@ -31,9 +33,9 @@ export default function Layout() {
                 <button
                   className="custom-button"
                 >
-                  <Link to="/registrarse">
+                  <a href="/registrarse" className="custom-button" data-bs-theme="dark">
                     Regístrate
-                  </Link>
+                  </a>
                 </button>
               </li>
               <li className="nav-item ms-2">
@@ -41,9 +43,9 @@ export default function Layout() {
                 <button
                   className="custom-button"
                 >
-                  <Link to="/login">
+                  <a href="/login" className="custom-button" data-bs-theme="dark">
                     Iniciar Sesión
-                  </Link>
+                  </a>
                 </button>
               </li>
             </ul>
@@ -52,15 +54,15 @@ export default function Layout() {
       </nav>
       <Outlet />
       <footer className="footer">
-        <nav className="custom-button" data-bs-theme="dark">
+        <a href="/nosotros" className="custom-button" data-bs-theme="dark">
           <h6>Contáctanos</h6>
-        </nav>
-        <nav className="custom-button" data-bs-theme="dark">
+        </a>
+        <a href="/nosotros" className="custom-button" data-bs-theme="dark">
           <h6>Correo</h6>
-        </nav>
-        <nav className="custom-button" data-bs-theme="dark">
+        </a>
+        <a href="/nosotros" className="custom-button" data-bs-theme="dark">
           <h6>Teléfono</h6>
-        </nav>
+        </a>
       </footer>
     </>
   );

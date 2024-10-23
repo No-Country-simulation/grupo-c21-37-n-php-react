@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import "../App.css";
 import mascota1 from "../assets/images/mascota1.jpg";
 import mascota2 from "../assets/images/mascota2.jpg";
 import mascota3 from "../assets/images/mascota3.jpg";
