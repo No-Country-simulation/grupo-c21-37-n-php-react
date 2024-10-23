@@ -17,9 +17,13 @@ const router = createBrowserRouter([
                 element: <LandingPage />
             },
             {
+                path: '/dashboard',
+                element: <Dashboard />
+            },
+            {
                 path: '/nosotros',
                 element: <SobreNosotros />
-            }
+            },
         ]
     },
     {
@@ -32,6 +36,7 @@ const router = createBrowserRouter([
             }
         ]
     },
+    
     {
         path: '/login',
         element: <AuthLayout />,
@@ -47,5 +52,6 @@ const router = createBrowserRouter([
         element: <Dashboard />,
     }
 ])
+
 
 export default router
