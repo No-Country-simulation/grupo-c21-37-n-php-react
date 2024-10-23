@@ -1,4 +1,3 @@
-import "../index.css";
 import animal2 from "../assets/animal2.svg";
 import mascota1 from "../assets/images/mascota1.jpg";
 import mascota2 from "../assets/images/mascota2.jpg";

@@ -1,14 +1,9 @@
-import React from 'react';
-import "../App.css";
-import Nav from '../components/Nav/Nav';
-import Footer from "../components/Footer/Footer";
 import mascotaImg from "../assets/images/mascota3.jpg"; // Importa una imagen de tu elección
 
 
 export default function SobreNosotros() {
     return (
         <div>
-            <Nav />
             <div className='container mt-5'>
                 <div className="text-center mb-4">
                     <h1 className="col-12">Sobre Nosotros</h1>
@@ -76,7 +71,6 @@ export default function SobreNosotros() {
                 </div>
             </section>
 
-            <Footer />
         </div>
     );
 }
