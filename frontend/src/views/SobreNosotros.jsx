@@ -1,13 +1,9 @@
-import React from 'react';
-import '../components/Styles/Styles.css'; // Añadir los estilos aquí
 import Imagen from '../assets/images/nos.png'; // Imagen que usas en la página
 import Logo from '../assets/Logo.svg';
-
 
 function SobreNosotros() {
     return (
         <div>
-
 
             {/* Sección principal */}
             <section className="about-us">
