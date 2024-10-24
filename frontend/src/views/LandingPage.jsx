@@ -18,7 +18,7 @@ export default function LandingPage() {
             }}>
                 <div className="container">
                     <div className="row" style={{ textAlign: 'center' }}>
-                        <h1>Te Ayudamos a encontrar <br />a tu mascota</h1>
+                        <h1>Te ayudamos a encontrar <br />a tu mascota</h1>
                     </div>
                 </div>
                 <div className="d-flex justify-content-center mt-3">

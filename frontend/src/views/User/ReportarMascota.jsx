@@ -1,6 +1,9 @@
 import React, { useState, useEffect } from 'react';
+import { useAuth } from "../../hooks/useAuth";
 
 const ReportarMascota = () => {
+  const { user, error } = useAuth({middleware: 'auth'})
+
   const [images, setImages] = useState([]);
   const [zonas, setZonas] = useState([]);
   const [ubicacion, setUbicacion] = useState('');
