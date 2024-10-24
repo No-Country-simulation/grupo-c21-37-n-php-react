@@ -127,7 +127,7 @@ export default function Layout() {
 
       <footer className="footer">
         <nav className="custom-button" data-bs-theme="dark">
-          <h6>Contáctanos</h6>
+          <h5>Contáctanos</h5>
         </nav>
         <nav className="custom-button" data-bs-theme="dark">
           <h6>Correo</h6>

@@ -14,7 +14,7 @@ function SobreNosotros() {
                             <h2>Sobre Nosotros</h2>
                         </div>
                         <div className="col-md-6 right-column">
-                            <h1>En <img src={Logo} alt="Logo" style={{ width: '160px' }} /> entendemos lo que significa perder una mascota.</h1>
+                            <h1>En <img src={Logo} alt="Logo" style={{ width: '280px' }} /> entendemos lo que significa perder una mascota.</h1>
                             <p>
                                 Sabemos que las mascotas son parte de la familia, y su pérdida puede ser una experiencia muy dolorosa y angustiante. Por eso, hemos creado una plataforma dedicada a conectar personas que han perdido a sus compañeros de cuatro patas con aquellas que los han encontrado.
                             </p>
