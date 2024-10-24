@@ -1,9 +1,9 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import mascota1 from "../assets/images/mascota1.jpg";
 import mascota2 from "../assets/images/mascota2.jpg";
 import mascota3 from "../assets/images/mascota3.jpg";
 
-export default function Dashboard() {
+export default function Feed() {
     // Estado para los filtros
     const [filters, setFilters] = useState({
         species: "",

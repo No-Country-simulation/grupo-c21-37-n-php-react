@@ -2,10 +2,13 @@ import { createBrowserRouter } from "react-router-dom";
 import Layout from "./layouts/Layout";
 import AuthLayout from "./layouts/AuthLayout";
 import LandingPage from "./views/LandingPage";
-import Registro from "./views/Registro";
-import Login from "./views/Login";
-import Dashboard from "./views/Dashboard";
+import Registro from "./views/Auth/Registro";
+import Login from "./views/Auth/Login";
+import Feed from "./views/Feed";
 import SobreNosotros from "./views/SobreNosotros";
+import MisMascotas from "./views/User/MisMascotas";
+import MisDatos from "./views/User/MisDatos";
+import ReportarMascota from "./views/User/ReportarMascota";
 
 const router = createBrowserRouter([
     {
@@ -17,41 +20,46 @@ const router = createBrowserRouter([
                 element: <LandingPage />
             },
             {
-                path: '/dashboard',
-                element: <Dashboard />
-            },
-            {
                 path: '/nosotros',
                 element: <SobreNosotros />
             },
-        ]
-    },
-    {
-        path: '/registrarse',
-        element: <AuthLayout />,
-        children: [
             {
-                index: true,
-                element: <Registro />
+                path: '/perdidos',
+                element: <Feed />
+            },
+            {
+                path: '/auth',
+                element: <AuthLayout />,
+                children: [
+                    {
+                        path: '/auth/registrarse',
+                        element: <Registro />
+                    },
+                    {
+                        path: '/auth/login',
+                        element: <Login />
+                    }
+                ]
+            },
+            {
+                path: '/perfil',
+                element: <Layout />,
+                children: [
+                    {
+                        path: '/perfil/mis-mascotas',
+                        element: <MisMascotas />
+                    },
+                    {
+                        path: '/perfil/mis-datos',
+                        element: <MisDatos />
+                    },                    {
+                        path: '/perfil/reportar-mascota',
+                        element: <ReportarMascota />
+                    }
+                ]
             }
         ]
     },
-    
-    {
-        path: '/login',
-        element: <AuthLayout />,
-        children: [
-        {
-            index: true,
-            element: <Login />
-        }
-    ]
-    },
-    {
-        path: '/dashboard',
-        element: <Dashboard />,
-    }
 ])
-
 
 export default router
