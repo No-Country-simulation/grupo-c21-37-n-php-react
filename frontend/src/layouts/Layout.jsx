@@ -64,6 +64,7 @@ export default function Layout() {
               ) : (
                 /* Si el usuario ESTÁ autenticado, mostramos los íconos */
                 <>
+           <span className="d-flex align-items-center">¡Hola {user?.name}!</span>
 <li className="nav-item ms-3">
   <Link to="/messages" className="nav-link d-flex align-items-center">
     <i className="bi bi-envelope fs-4"></i> {/* Icono de mensajes */}

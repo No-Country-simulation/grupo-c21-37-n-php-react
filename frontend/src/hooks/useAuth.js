@@ -31,6 +31,7 @@ export const useAuth = ({ middleware, url }) => {
       console.log(error);
     }
   };
+  
   const registro = async (datos, setErrores) => {
     try {
       const { data } = await clienteAxios.post('/api/registro', datos);
