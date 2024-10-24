@@ -33,9 +33,9 @@ export default function Registro() {
   }
 
   return (
-    <div>
-      <div className="modal-header d-flex justify-content-between">
-        <h5 className="modal-title" id="loginModalLabel">Regístrate</h5>
+    <div className="container my-5">
+      <div className=" mt-5" >
+            <h3>Formulario de Registro</h3>
       </div>
       <form
         onSubmit={handleSubmit} noValidate
@@ -44,7 +44,7 @@ export default function Registro() {
         {errores ? errores.map(error => <Alerta key={error}>{error}</Alerta>) : null}
 
 
-        <div className="mb-3">
+        <div className="container my-3">
           <label htmlFor="name" className="form-label">Nombre</label>
           <input
             type="text"
@@ -103,7 +103,9 @@ export default function Registro() {
             required
           />
         </div>
-
+        <div className="mb-3">
+          <p>¿Ya tienes cuenta? <Link to="/auth/login">Haz click aquí</Link></p>
+        </div>
 
         <div className="adecuada">
           <button
@@ -113,9 +115,7 @@ export default function Registro() {
             Registrarme
           </button>
         </div>
-        <div className="mb-3">
-          <p>¿Ya tienes cuenta? <Link to="/auth/login">Haz click aquí</Link></p>
-        </div>
+       
       </form>
     </div>
   );

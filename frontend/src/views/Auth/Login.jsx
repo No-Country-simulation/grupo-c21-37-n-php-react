@@ -27,9 +27,9 @@ export default function Login() {
   }
 
   return (
-    <div>
-      <div className="modal-header d-flex justify-content-between">
-        <h5 className="modal-title" id="loginModalLabel">Iniciar sesión</h5>
+    <div className="container my-5">
+      <div className=" mt-5" >
+            <h3>Iniciar Sesión</h3>
       </div>
       <form
         onSubmit={handleSubmit}
@@ -38,7 +38,7 @@ export default function Login() {
 
         {errores ? errores.map(error => <Alerta key={error}>{error}</Alerta>) : null}
 
-        <div className="mb-3">
+        <div className="my-5">
           <label htmlFor="email" className="form-label">Correo Electrónico</label>
           <input
             type="email"
@@ -50,7 +50,7 @@ export default function Login() {
           />
         </div>
 
-        <div className="mb-3">
+        <div className="my-3">
           <label htmlFor="password" className="form-label">Contraseña</label>
           <input
             type="password"
@@ -61,7 +61,10 @@ export default function Login() {
             ref={passwordRef}
           />
         </div>
-
+        <div className="mb-3">
+          <p>¿No tienes cuenta? <Link to="/auth/registrarse">Regístrate</Link>
+          </p>
+        </div>
 
         <div className="adecuada">
           <button
@@ -71,10 +74,7 @@ export default function Login() {
             Ingresar
           </button>
         </div>
-        <div className="mb-3">
-          <p>¿No tienes cuenta? <Link to="/auth/registrarse">Regístrate</Link>
-          </p>
-        </div>
+
       </form>
     </div>
   );
