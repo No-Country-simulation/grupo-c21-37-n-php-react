@@ -1,10 +1,21 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from "react";
+import mascota1 from "../assets/images/mascota1.jpg";
+import mascota2 from "../assets/images/mascota2.jpg";
+import mascota3 from "../assets/images/mascota3.jpg";
 
-const ReportarMascota = () => {
-    const [images, setImages] = useState([]);
+export default function Feed() {
+    // Estado para los filtros
+    const [filters, setFilters] = useState({
+        species: "",
+        size: "",
+        color: "",
+        ubicacion: "" // Agregamos ubicacion al estado
+    });
+
+    // Estado para las zonas
     const [zonas, setZonas] = useState([]);
-    const [ubicacion, setUbicacion] = useState('');
 
+    // Cargar zonas dinámicamente al montar el componente
     useEffect(() => {
         const zonasBsAs = [
             "Belgrano", "Palermo", "Recoleta", "Caballito", "Villa Urquiza", 
@@ -13,141 +24,228 @@ const ReportarMascota = () => {
             "Mataderos", "Nuñez", "Constitución", "Barracas", "La Boca", 
             "Paternal", "Parque Patricios", "Liniers", "Colegiales", "Parque Chacabuco"
         ];
-        setZonas(zonasBsAs); // Cargar las zonas al estado
+        setZonas(zonasBsAs);
     }, []);
 
-    const handleImageUpload = (event) => {
-        const files = Array.from(event.target.files);
-        const newImages = files.map((file) => URL.createObjectURL(file));
-        setImages([...images, ...newImages].slice(0, 3)); // Limitar a 3 imágenes
+    // Manejar cambios en los filtros
+    const handleFilterChange = (e) => {
+        setFilters({
+            ...filters,
+            [e.target.name]: e.target.value
+        });
     };
 
+  
+
+
     return (
-        <div className="reportar-mascota-container">
-            <h2>Reportar Mascotas</h2>
-            
-            <div className="fotos-container">
-                {images.map((image, index) => (
-                    <div key={index} className="image-preview">
-                        <img src={image} alt={`preview-${index}`} />
-                    </div>
+        <div className="container mt-5">
+            <div className="row">
+                {/* Panel lateral de filtros */}
+                <div className="col-md-3">
+                    <div className="filter-panel p-3 bg-light border">
+                        <h4 >Filtrar</h4>
+
+                        {/* Filtro por especie */}
+                        <div className="mb-3">
+                            <label className="form-label">Tipo de Mascota</label>
+                            <select
+                                name="species"
+                                value={filters.species}
+                                onChange={handleFilterChange}
+                                className="form-select"
+                            >
+                                <option value="">Todas</option>
+                                <option value="perro">Perro</option>
+                                <option value="gato">Gato</option>
+
+                            </select>
+                        </div>
+
+                        {/* Filtro por tamaño */}
+                        <div className="mb-3">
+                            <label className="form-label">Tamaño</label>
+                            <select
+                                name="size"
+                                value={filters.size}
+                                onChange={handleFilterChange}
+                                className="form-select"
+                            >
+                                <option value="">Todos</option>
+                                <option value="pequeño">Pequeño</option>
+                                <option value="mediano">Mediano</option>
+                                <option value="grande">Grande</option>
+                            </select>
+                        </div>
+
+                        {/* Filtro por color */}
+                        <div className="mb-3">
+                            <label className="form-label">Color</label>
+                            <select
+                                name="color"
+                                value={filters.color}
+                                onChange={handleFilterChange}
+                                className="form-select"
+                            >
+                                <option value="">Todos</option>
+                                <option value="negro">Negro</option>
+                                <option value="blanco">Blanco</option>
+                                <option value="marrón">Marrón</option>
+                            </select>
+                        </div>
+
+                        {/* Filtro por sexo */}
+                        <div className="mb-3">
+                            <label className="form-label">Sexo</label>
+                            <select
+                                name="sex"
+                                value={filters.sex}
+                                onChange={handleFilterChange}
+                                className="form-select"
+                            >
+                                <option value="">Todos</option>
+                                <option value="macho">Macho</option>
+                                <option value="hembra">Hembra</option>
+                            </select>
+                        </div>
+                        {/* Filtro por ubicacion */}
+                        <div className="mb-3">
+            <label className="form-label">Ubicación</label>
+            <select
+                name="ubicacion"
+                value={filters.ubicacion}
+                onChange={handleFilterChange}
+                className="form-select"
+            >
+                <option value="">Zona</option>
+                {zonas.map((zona, index) => (
+                    <option key={index} value={zona}>{zona}</option>
                 ))}
-                {images.length < 3 && (
-                    <label className="upload-label">
-                        <input 
-                            type="file" 
-                            accept="image/*" 
-                            multiple 
-                            onChange={handleImageUpload} 
-                            style={{ display: 'none' }} 
-                        />
-                        <div className="add-image">Agregar 3 más</div>
-                    </label>
-                )}
-            </div>
-
-            <div className="informacion-general">
-                <h3>Información General</h3>
-                <div className="form-group">
-                    <label>¿Eres el dueño de la mascota?</label>
-                    <div className="radio-group">
-                        <label><input type="radio" name="dueno" /> Sí</label>
-                        <label><input type="radio" name="dueno" /> No</label>
-                    </div>
-                </div>
-                
-                <div className="form-group">
-                    <label>¿Tienes autorización del dueño para publicar?</label>
-                    <div className="radio-group">
-                        <label><input type="radio" name="autorizacion" /> Sí estoy autorizado</label>
-                        <label><input type="radio" name="autorizacion" /> No estoy autorizado</label>
+            </select>
+        </div>
+                        <button className="custom-button">Aplicar filtros</button>
                     </div>
                 </div>
 
-                <div className="form-group">
-                    <label>Fecha de última vez visto</label>
-                    <input type="date" className="form-control" />
-                </div>
-                
-                <div className="form-group">
-                    <label>Ubicación de pérdida</label>
-                    <select 
-                        value={ubicacion} 
-                        onChange={(e) => setUbicacion(e.target.value)} 
-                        className="form-control"
-                    >
-                        <option value="">Seleccionar una zona</option>
-                        {zonas.map((zona, index) => (
-                            <option key={index} value={zona}>{zona}</option>
-                        ))}
-                    </select>
-                </div>
-            </div>
+                {/* Sección de tarjetas de mascotas */}
+                <div className="col-md-9">
+                    <section className="mt-5">
+                        <div className="row justify-content-center">
+                            <div className="col-12 text-center mb-2">
+                                <h2>Mascotas Perdidas</h2>
+                            </div>
 
-            <div className="informacion-mascota">
-                <h3>Información Mascota</h3>
-                <div className="form-group">
-                    <label>Nombre Mascota</label>
-                    <input type="text" className="form-control" placeholder="Nombre" />
-                </div>
+                            {/* Tarjeta 1 */}
+                            <div className="col-md-4">
+                                <div className="card d-flex flex-row" style={{ width: '100%' }}>
+                                    <img src={mascota1} className="card-img-left" alt="Imagen de mascota perdida" style={{ width: '150px', height: '150px', objectFit: 'cover' }} />
+                                    <div className="card-body" style={{ flex: '1' }}>
+                                        <h5 className="card-title">Mascota 1</h5>
+                                        <p className="card-text">Descripción breve de la mascota perdida.</p>
+                                        <a href="#" className="card-link">Ver más detalles</a>
+                                    </div>
+                                </div>
+                            </div>
 
-                <div className="form-group">
-                    <label>Edad</label>
-                    <div className="radio-group">
-                        <label><input type="radio" name="edad" /> Cachorro</label>
-                        <label><input type="radio" name="edad" /> Joven</label>
-                        <label><input type="radio" name="edad" /> Adulto</label>
-                    </div>
-                </div>
+                            {/* Tarjeta 2 */}
+                            <div className="col-md-4">
+                                <div className="card d-flex flex-row" style={{ width: '100%' }}>
+                                    <img src={mascota2} className="card-img-left" alt="Imagen de mascota perdida" style={{ width: '150px', height: '150px', objectFit: 'cover' }} />
+                                    <div className="card-body" style={{ flex: '1' }}>
+                                        <h5 className="card-title">Mascota 2</h5>
+                                        <p className="card-text">Descripción breve de la mascota perdida.</p>
+                                        <a href="#" className="card-link">Ver más detalles</a>
+                                    </div>
+                                </div>
+                            </div>
 
-                <div className="form-group">
-                    <label>Color</label>
-                    <select className="form-control">
-                        <option>Seleccionar color</option>
-                    </select>
-                </div>
+                            {/* Tarjeta 3 */}
+                            <div className="col-md-4">
+                                <div className="card d-flex flex-row" style={{ width: '100%' }}>
+                                    <img src={mascota3} className="card-img-left" alt="Imagen de mascota perdida" style={{ width: '150px', height: '150px', objectFit: 'cover' }} />
+                                    <div className="card-body" style={{ flex: '1' }}>
+                                        <h5 className="card-title">Mascota 3</h5>
+                                        <p className="card-text">Descripción breve de la mascota perdida.</p>
+                                        <a href="#" className="card-link">Ver más detalles</a>
+                                    </div>
+                                </div>
+                            </div>
 
-                <div className="form-group">
-                    <label>Raza</label>
-                    <input type="text" className="form-control" placeholder="Raza" />
-                </div>
+                            {/* Tarjeta 4 */}
+                            <div className="col-md-4">
+                                <div className="card d-flex flex-row" style={{ width: '100%' }}>
+                                    <img src={mascota1} className="card-img-left" alt="Imagen de mascota perdida" style={{ width: '150px', height: '150px', objectFit: 'cover' }} />
+                                    <div className="card-body" style={{ flex: '1' }}>
+                                        <h5 className="card-title">Mascota 4</h5>
+                                        <p className="card-text">Descripción breve de la mascota perdida.</p>
+                                        <a href="#" className="card-link">Ver más detalles</a>
+                                    </div>
+                                </div>
+                            </div>
 
-                <div className="form-group">
-                    <label>Sexo</label>
-                    <div className="radio-group">
-                        <label><input type="radio" name="sexo" /> Hembra</label>
-                        <label><input type="radio" name="sexo" /> Macho</label>
-                    </div>
-                </div>
+                            {/* Tarjeta 5 */}
+                            <div className="col-md-4">
+                                <div className="card d-flex flex-row" style={{ width: '100%' }}>
+                                    <img src={mascota2} className="card-img-left" alt="Imagen de mascota perdida" style={{ width: '150px', height: '150px', objectFit: 'cover' }} />
+                                    <div className="card-body" style={{ flex: '1' }}>
+                                        <h5 className="card-title">Mascota 5</h5>
+                                        <p className="card-text">Descripción breve de la mascota perdida.</p>
+                                        <a href="#" className="card-link">Ver más detalles</a>
+                                    </div>
+                                </div>
+                            </div>
 
-                <div className="form-group">
-                    <label>Microchip</label>
-                    <div className="radio-group">
-                        <label><input type="radio" name="microchip" /> Sí</label>
-                        <label><input type="radio" name="microchip" /> No</label>
-                    </div>
-                </div>
+                            {/* Tarjeta 6 */}
+                            <div className="col-md-4">
+                                <div className="card d-flex flex-row" style={{ width: '100%' }}>
+                                    <img src={mascota3} className="card-img-left" alt="Imagen de mascota perdida" style={{ width: '150px', height: '150px', objectFit: 'cover' }} />
+                                    <div className="card-body" style={{ flex: '1' }}>
+                                        <h5 className="card-title">Mascota 6</h5>
+                                        <p className="card-text">Descripción breve de la mascota perdida.</p>
+                                        <a href="#" className="card-link">Ver más detalles</a>
+                                    </div>
+                                </div>
+                            </div>
 
-                <div className="form-group">
-                    <label>Castrado</label>
-                    <div className="radio-group">
-                        <label><input type="radio" name="castrado" /> Sí</label>
-                        <label><input type="radio" name="castrado" /> No</label>
-                    </div>
-                </div>
+                            {/* Tarjeta 7 */}
+                            <div className="col-md-4">
+                                <div className="card d-flex flex-row" style={{ width: '100%' }}>
+                                    <img src={mascota1} className="card-img-left" alt="Imagen de mascota perdida" style={{ width: '150px', height: '150px', objectFit: 'cover' }} />
+                                    <div className="card-body" style={{ flex: '1' }}>
+                                        <h5 className="card-title">Mascota 7</h5>
+                                        <p className="card-text">Descripción breve de la mascota perdida.</p>
+                                        <a href="#" className="card-link">Ver más detalles</a>
+                                    </div>
+                                </div>
+                            </div>
 
-                <div className="form-group">
-                    <label>Descripción Adicional</label>
-                    <textarea className="form-control" placeholder="Descripción adicional" maxLength="100"></textarea>
-                </div>
-            </div>
+                            {/* Tarjeta 8 */}
+                            <div className="col-md-4">
+                                <div className="card d-flex flex-row" style={{ width: '100%' }}>
+                                    <img src={mascota2} className="card-img-left" alt="Imagen de mascota perdida" style={{ width: '150px', height: '150px', objectFit: 'cover' }} />
+                                    <div className="card-body" style={{ flex: '1' }}>
+                                        <h5 className="card-title">Mascota 8</h5>
+                                        <p className="card-text">Descripción breve de la mascota perdida.</p>
+                                        <a href="#" className="card-link">Ver más detalles</a>
+                                    </div>
+                                </div>
+                            </div>
 
-            <div className="buttons">
-                <button className="cancel-button">Cancelar</button>
-                <button className="submit-button">Guardar Cambios</button>
+                            {/* Tarjeta 9 */}
+                            <div className="col-md-4">
+                                <div className="card d-flex flex-row" style={{ width: '100%' }}>
+                                    <img src={mascota3} className="card-img-left" alt="Imagen de mascota perdida" style={{ width: '150px', height: '150px', objectFit: 'cover' }} />
+                                    <div className="card-body" style={{ flex: '1' }}>
+                                        <h5 className="card-title">Mascota 9</h5>
+                                        <p className="card-text">Descripción breve de la mascota perdida.</p>
+                                        <a href="#" className="card-link">Ver más detalles</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
             </div>
         </div>
     );
-};
-
-export default ReportarMascota;
+}
