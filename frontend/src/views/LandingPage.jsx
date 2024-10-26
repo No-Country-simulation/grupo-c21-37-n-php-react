@@ -1,7 +1,7 @@
 import animal2 from "../assets/animal2.svg";
-import mascota1 from "../assets/images/mascota1.jpg";
-import mascota2 from "../assets/images/mascota2.jpg";
-import mascota3 from "../assets/images/mascota3.jpg";
+import mascota1 from "/img/mascota1.jpg";
+import mascota2 from "/img/mascota2.jpg";
+import mascota3 from "/img/mascota3.jpg";
 
 export default function LandingPage() {
     return (

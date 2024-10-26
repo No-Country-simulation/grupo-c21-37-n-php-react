@@ -12,8 +12,26 @@ class MascotaCollection extends ResourceCollection
      *
      * @return array<int|string, mixed>
      */
-    public function toArray(Request $request): array
+    public function toArray($request)
     {
-        return parent::toArray($request);
+        return [
+            'data' => $this->collection->map(function ($mascota) {
+                return [
+                    'id' => $mascota->id,
+                    'nombre' => $mascota->nombre,
+                    'descripcion' => $mascota->descripcion,
+                    'fotos_mascotas' => $mascota->fotos_mascotas->map(function ($foto) {
+                        return [
+                            'id' => $foto->id,
+                            'url' => $foto->url,
+                        ];
+                    }),
+                ];
+            }),
+            'links' => [
+                'self' => 'link-value',
+            ],
+        ];
     }
+    
 }

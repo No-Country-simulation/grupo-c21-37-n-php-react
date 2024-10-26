@@ -13,9 +13,13 @@ class MascotaController extends Controller
      */
     public function index()
     {
-        // dd('Desde controlador');
-        return new MascotaCollection(Mascota::all());
+        return new MascotaCollection(
+            Mascota::with('fotos_mascotas') // Utiliza la relación con el nuevo nombre
+                ->orderBy('id', 'DESC')
+                ->paginate(9)
+        );
     }
+    
 
     /**
      * Store a newly created resource in storage.

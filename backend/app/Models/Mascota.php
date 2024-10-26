@@ -2,8 +2,9 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
+use App\Models\FotoMascota;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Mascota extends Model
 {
@@ -25,4 +26,11 @@ class Mascota extends Model
     {
         return $this->belongsTo(User::class);
     }
+
+    // Relación con fotos
+    public function fotos_mascotas()
+    {
+        return $this->hasMany(FotoMascota::class);
+    }
+
 }
