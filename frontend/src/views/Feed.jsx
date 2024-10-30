@@ -1,7 +1,6 @@
-import { useState, useEffect } from "react";
-import mascota1 from "../assets/images/mascota1.jpg";
-import mascota2 from "../assets/images/mascota2.jpg";
-import mascota3 from "../assets/images/mascota3.jpg";
+import usePetgram from "../hooks/usePetgram";
+import SidebarFeed from "../components/SidebarFeed";
+import { useEffect, useState } from "react";
 
 export default function Feed() {
     // Estado para los filtros
@@ -144,6 +143,7 @@ export default function Feed() {
                         </div>
                     </section>
                 </div>
+
             </div>
         </div>
     )
