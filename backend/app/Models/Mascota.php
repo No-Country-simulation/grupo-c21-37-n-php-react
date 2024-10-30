@@ -14,10 +14,14 @@ class Mascota extends Model
         'nombre',
         'especie',
         'raza',
-        'edad',
         'sexo',
+        'edad',
+        'microchip',
+        'castrado',
+        'fecha_hora_desaparicion',
+        'ubicacion',
         'descripcion',
-        'estado',
+        'fotos',
         'user_id',
     ];
 
