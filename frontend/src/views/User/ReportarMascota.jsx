@@ -26,7 +26,9 @@ const ReportarMascota = () => {
 
     <div className="reportar-mascota-container mt-5">
       <h2>Reportar Mascotas</h2>
-
+<div className='cargar-imagen-perdidos'>
+<h6>Cargar Imagen</h6>
+</div>
       <div className="fotos-container">
         {images.map((image, index) => (
           <div key={index} className="image-preview">
@@ -43,8 +45,11 @@ const ReportarMascota = () => {
               style={{ display: 'none' }}
             />
             <div className="add-image">Agregar 3 más</div>
+            
           </label>
+          
         )}
+        
       </div>
 
       <div className="form-container-perdido">
@@ -53,16 +58,16 @@ const ReportarMascota = () => {
           <div className="form-group">
             <label>¿Eres el dueño de la mascota?</label>
             <div className="radio-group">
-              <label><input type="radio" name="dueno" /> Sí</label>
-              <label><input type="radio" name="dueno" /> No</label>
+              <label> Sí<input type="radio" name="dueno" /></label>
+              <label> No<input type="radio" name="dueno" /></label>
             </div>
           </div>
 
           <div className="form-group">
             <label>¿Tienes autorización del dueño para publicar?</label>
             <div className="radio-group">
-              <label><input type="radio" name="autorizacion" /> Sí estoy autorizado</label>
-              <label><input type="radio" name="autorizacion" /> No estoy autorizado</label>
+              <label> Sí estoy autorizado<input type="radio" name="autorizacion" /> </label>
+              <label>No estoy autorizado<input type="radio" name="autorizacion" /> </label>
             </div>
           </div>
 
@@ -102,9 +107,9 @@ const ReportarMascota = () => {
           <div className="form-group">
             <label>Edad</label>
             <div className="radio-group">
-              <label><input type="radio" name="edad" /> Cachorro</label>
-              <label><input type="radio" name="edad" /> Joven</label>
-              <label><input type="radio" name="edad" /> Adulto</label>
+              <label>Cachorro<input type="radio" name="edad" /> </label>
+              <label> Joven<input type="radio" name="edad" /></label>
+              <label>Adulto<input type="radio" name="edad" /> </label>
             </div>
           </div>
 
@@ -112,6 +117,9 @@ const ReportarMascota = () => {
             <label>Color</label>
             <select className="form-control">
               <option>Seleccionar color</option>
+              <option>Blanco</option>
+              <option>Negro</option>
+              <option>Marron</option>
             </select>
           </div>
 
@@ -123,24 +131,24 @@ const ReportarMascota = () => {
           <div className="form-group">
             <label>Sexo</label>
             <div className="radio-group">
-              <label><input type="radio" name="sexo" /> Hembra</label>
-              <label><input type="radio" name="sexo" /> Macho</label>
+              <label>Hembra<input type="radio" name="sexo" /> </label>
+              <label>Macho<input type="radio" name="sexo" /> </label>
             </div>
           </div>
 
           <div className="form-group">
             <label>Microchip</label>
             <div className="radio-group">
-              <label><input type="radio" name="microchip" /> Sí</label>
-              <label><input type="radio" name="microchip" /> No</label>
+              <label> Sí<input type="radio" name="microchip" /></label>
+              <label>No<input type="radio" name="microchip" /> </label>
             </div>
           </div>
 
           <div className="form-group">
             <label>Castrado</label>
             <div className="radio-group">
-              <label><input type="radio" name="castrado" /> Sí</label>
-              <label><input type="radio" name="castrado" /> No</label>
+              <label> Sí<input type="radio" name="castrado" /></label>
+              <label> No<input type="radio" name="castrado" /></label>
             </div>
           </div>
           </div>
