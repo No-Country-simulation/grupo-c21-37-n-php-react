@@ -2,7 +2,7 @@
 :root {
   --primario: #006374;
   --primario-claro: #D6F9FF;
-  --secundario: #D6F9FF;
+  --secundario: #009FAF;
   --secundario-claro: #ADF8FF;
   --terciario: #25C5DA;
   --terciario-claro: #96E2ED;
@@ -122,7 +122,9 @@ a:hover {
   text-align: center;
   color: var(--primario);
 }
-
+.cargar-imagen-perdidos {
+  text-align: left;
+}
 .form-container-perdido {
   display: flex;
   justify-content: space-between; /* Separa los formularios */
@@ -142,8 +144,8 @@ a:hover {
 }
 
 .radio-group {
-  display: flex;
-  gap: 10px; /* Espacio entre opciones de radio */
+  display: center;
+  gap: 10px;; /* Espacio entre opciones de radio */
 }
 
 @media (max-width: 768px) {
@@ -175,6 +177,149 @@ a:hover {
   border: none;
   border-radius: 5px;
   cursor: pointer;
+}
+
+/*mis mascotas*/
+.mis-mascotas-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: Arial, sans-serif;
+  color: var(--gris-oscuro);
+}
+
+.header {
+  display: flex;
+  align-items: center; /* Alinea verticalmente al inicio */
+  justify-content: flex-start; /* Alinea al margen izquierdo */
+  gap: 3rem; /* Espacio entre el ícono y el título */
+  text-align: left; /* Asegura que el texto esté alineado a la izquierda */
+  width: 100%; /* Ocupa el ancho completo del contenedor */
+}
+
+.header h2 {
+  margin: 0;
+  color: #4D4D4D;
+}
+
+
+
+.content {
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+  width: 80%;
+  max-width: 1200px;
+}
+
+.image-gallery {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.main-image img {
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  border-radius: 10px;
+}
+
+.thumbnail-gallery {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.thumbnail-gallery img {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.details {
+  flex: 1;
+}
+
+.header-details {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header-details .user-info {
+  display: flex;
+  align-items: center;
+}
+
+.header-details .username {
+  margin-left: 0.5rem;
+}
+
+.header-details .date {
+  color: #555;
+}
+.details h3 {
+  display: flex;
+  margin-top: 2rem;
+  font-size: 1.8rem;
+  color: var(--primario);
+}
+
+.details-info p {
+  margin-top: 1.1rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.details-info p strong {
+  color: var(--gris);
+}
+.details-info strong.color  {
+  color: var(--primario);
+
+}
+
+.description {
+  margin-top: 1rem;
+  padding: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+}
+
+.action-buttons {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1.5rem;
+  justify-content: end;
+}
+
+.action-buttons button {
+  padding: 0.8rem 1.2rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+ 
+}
+
+.contact-owner {
+  background-color: #007b8f;
+  color: #fff;
+}
+
+.provide-info {
+  background-color: var(--secundario);
+  color: #fff;
+}
+
+.view-last-location {
+  background-color: var(--terciario);
+  color: #fff;
 }
 
 
