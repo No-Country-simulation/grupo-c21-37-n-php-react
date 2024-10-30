@@ -544,6 +544,10 @@ footer p {
     width: 40%;
   }
 }
+.text-primario {
+  color: var(--primario);
+}
+
 
 /* Dark Mode */
 @media (prefers-color-scheme: light) {
