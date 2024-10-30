@@ -41,6 +41,7 @@ const router = createBrowserRouter([
                     }
                 ]
             },
+        ]},
             {
                 path: '/perfil',
                 element: <Layout />,
@@ -58,8 +59,6 @@ const router = createBrowserRouter([
                     }
                 ]
             }
-        ]
-    },
 ])
 
 export default router

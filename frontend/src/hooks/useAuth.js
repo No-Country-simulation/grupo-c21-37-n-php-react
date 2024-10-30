@@ -31,6 +31,7 @@ export const useAuth = ({ middleware, url }) => {
       console.log(error);
     }
   };
+  
   const registro = async (datos, setErrores) => {
     try {
       const { data } = await clienteAxios.post('/api/registro', datos);
@@ -67,7 +68,16 @@ export const useAuth = ({ middleware, url }) => {
     if(middleware === 'auth' && error){
       navigate('/auth/login')
     }
+    if(middleware === 'auth' && url === "/auth/login" || url === "/auth/registrarse" ){
+      navigate('/perdidos')
+    }
+
   }, [user, error])
+
+  console.log(user)
+  console.log(error)
+  console.log(middleware)
+  console.log(url)
 
   return { login, registro, logout, user, error };
 };

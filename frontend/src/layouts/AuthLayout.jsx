@@ -7,7 +7,7 @@ export default function AuthLayout() {
       {/* Columna para la imagen */}
       <div className="col-md-6">
         <img
-          src="../img/imgregistro.png"
+          src="/imgregistro.png"
           alt="Imagen de Registro"
           className="img-fluid img-auth"
         />
