@@ -1,10 +1,9 @@
 <?php
 
-use App\Http\Controllers\AuthController;
-use App\Http\Controllers\MascotaController;
-use App\Models\Mascota;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AuthController;
+use App\Http\Controllers\MascotaController;
 
 Route::middleware('auth:sanctum')->group(function(){
     Route::get('/user', function (Request $request){
