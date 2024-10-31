@@ -1,6 +1,7 @@
 import usePetgram from "../hooks/usePetgram";
 import SidebarFeed from "../components/SidebarFeed";
 import { useEffect, useState } from "react";
+import mascota1 from "../../public/img/mascota1.jpg";
 
 export default function Feed() {
     // Estado para los filtros
@@ -45,7 +46,7 @@ export default function Feed() {
                 {/* Panel lateral de filtros */}
 
                 <div className="col-md-3">
-                    <div className="filter-panel p-3 bg-light border">
+                    <div className="filter-panel p-3 bg-light border mt-5">
                         <h4>Filtrar</h4>
                         {/* Filtro por especie */}
                         <div className="mb-3">

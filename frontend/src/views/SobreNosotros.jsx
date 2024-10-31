@@ -9,9 +9,9 @@ function SobreNosotros() {
             <section className="about-us">
                 <div className="container">
                     <div className="row">
-                        <div className="col-md-6 left-column">
+                        <div className="col-md-6 left-column position-relative">
                             <img src={Imagen} alt="Sobre Nosotros" className="img-fluid" />
-                            <h2>Sobre Nosotros</h2>
+                            <h2 className='position-absolute top-70 start-50 text-center translate-middle'>Sobre Nosotros</h2>
                         </div>
                         <div className="col-md-6 right-column">
                             <h1>En <img src={Logo} alt="Logo" style={{ width: '280px' }} /> entendemos lo que significa perder una mascota.</h1>
