@@ -15,7 +15,7 @@ export default function NavUser() {
     setShowDropdown(!showDropdown);
   };
     return (
-        /* Si el usuario ESTÁ autenticado, mostramos los íconos */
+        
         <>
             <span className="d-flex align-items-center">¡Hola {user?.name}!</span>
             <li className="nav-item ms-3">

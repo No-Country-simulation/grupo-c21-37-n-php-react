@@ -10,7 +10,14 @@ export default function Layout() {
   const { user } = useAuth({
     middleware: 'guest'
   })
+  
+  // Estado para controlar el dropdown del perfil
+  const [showDropdown, setShowDropdown] = useState(false);
 
+  // Función para alternar el menú desplegable
+  const toggleDropdown = () => {
+    setShowDropdown(!showDropdown);
+  };
   return (
     <>
       {/* Navbar */}
@@ -36,65 +43,10 @@ export default function Layout() {
           </button>
           <div className="collapse navbar-collapse" id="navbarNav">
             <ul className="navbar-nav ms-auto">
-              {/* Si el usuario NO está autenticado, mostramos los botones */}
               {!user ? (
                 <NavGuest />
-              ) : (<>
+              ) : (
                 <NavUser />
-                /* Si el usuario ESTÁ autenticado, mostramos los íconos */
-                
-                  <li className="nav-item ms-3">
-                    <Link to="/messages" className="nav-link d-flex align-items-center">
-                      <i className="bi bi-envelope fs-4"></i> {/* Icono de mensajes */}
-                    </Link>
-                  </li>
-
-                  <li className="nav-item ms-3">
-                    <Link to="/notifications" className="nav-link d-flex align-items-center">
-                      <i className="bi bi-bell fs-4"></i> {/* Icono de notificaciones */}
-                    </Link>
-                  </li>
-
-                  <li className="nav-item ms-3 dropdown">
-                    <a
-                      onClick={toggleDropdown}
-                      className="nav-link dropdown-toggle d-flex align-items-center text-primario"
-                      href="#"
-                      role="button"
-                      id="dropdownMenuLink"
-                      aria-expanded={showDropdown ? "true" : "false"}
-                      style={{ cursor: 'pointer' }}
-                    >
-                      <i className="bi bi-person fs-4"></i>
-                    </a>
-
-                    {showDropdown && (
-                      <ul
-                        className="dropdown-menu dropdown-menu-end show"
-                        aria-labelledby="dropdownMenuLink"
-                        style={{ right: 0 }}
-                      >
-                        <li>
-                          <Link to="/perfil/mis-datos" className="dropdown-item text-primario">Mis datos</Link>
-                        </li>
-                        <li>
-                          <Link to="/perfil/mis-mascotas" className="dropdown-item text-primario">Mis mascotas</Link>
-                        </li>
-                        <li>
-                          <Link to="/perfil/reportar-mascota" className="dropdown-item text-primario">Reportar Mascota</Link>
-                        </li>
-                        <li>
-                          <button onClick={logout} className="dropdown-item text-primario" style={{ border: 'none', background: 'none', cursor: 'pointer' }}>
-                            Cerrar sesión
-                          </button>
-                        </li>
-                      </ul>
-                    )}
-                  </li>
-
-
-
-                </>
               )}
             </ul>
           </div>
