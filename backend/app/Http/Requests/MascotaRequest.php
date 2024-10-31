@@ -27,9 +27,9 @@ class MascotaRequest extends FormRequest
             'raza' => 'nullable|string|max:100',
             'edad' => 'nullable|integer|min:0|max:20',
             'sexo' => 'required|in:macho,hembra',
-            'microchip' => 'boolean',
-            'castrado' => 'boolean',
-            'descripcion' => 'nullable|string|max:500',
+            'microchip' => 'required|in:true,false', // Permitir "true" y "false"
+            'castrado' => 'required|in:true,false',   // Permitir "true" y "false"
+             'descripcion' => 'nullable|string|max:500',
             'fecha_hora_desaparicion' => 'required|date',
             'ubicacion' => 'required|string|max:255',
             'user_id' => 'required',
@@ -74,8 +74,8 @@ class MascotaRequest extends FormRequest
             'fotos.array' => 'El campo fotos debe ser un arreglo.',
             'fotos.max' => 'No se pueden subir más de 3 fotos.',
         
-            'fotos.*.image' => 'Cada archivo en fotos debe ser una imagen.',
-            'fotos.*.mimes' => 'Cada imagen debe estar en formato jpeg, png, jpg, gif o svg.',
+            // 'fotos.*.image' => 'Cada archivo en fotos debe ser una imagen.',
+            // 'fotos.*.mimes' => 'Cada imagen debe estar en formato jpeg, png, jpg, gif o svg.',
         ];
         
     }
