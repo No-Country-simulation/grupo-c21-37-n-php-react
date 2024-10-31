@@ -144,8 +144,9 @@ a:hover {
 }
 
 .radio-group {
-  display: center;
-  gap: 10px;; /* Espacio entre opciones de radio */
+  display: flex;
+  justify-content: center;
+  gap: 10px; /* Espacio entre opciones de radio */
 }
 
 @media (max-width: 768px) {
@@ -544,6 +545,10 @@ footer p {
     width: 40%;
   }
 }
+.text-primario {
+  color: var(--primario);
+}
+
 
 /* Dark Mode */
 @media (prefers-color-scheme: light) {
