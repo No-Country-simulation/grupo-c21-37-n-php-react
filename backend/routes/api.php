@@ -17,4 +17,6 @@ Route::middleware('auth:sanctum')->group(function(){
 Route::post('/registro', [AuthController::class, 'register']);
 Route::post('/login', [AuthController::class, 'login']);
 
-Route::apiResource('/perdidos', MascotaController::class);
+Route::apiResource('/perdidos', MascotaController::class)->parameters([
+    'perdidos' => 'mascota',
+]);

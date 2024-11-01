@@ -12,7 +12,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::table('mascotas', function (Blueprint $table) {
-            $table->string('zona_desaparicion')->nullable(); // Campo de fecha y hora
+            $table->string('ubicacion')->nullable(); // Campo de fecha y hora
         });
     }
 

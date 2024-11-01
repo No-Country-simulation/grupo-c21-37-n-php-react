@@ -1,7 +1,6 @@
 import usePetgram from "../hooks/usePetgram";
 import SidebarFeed from "../components/SidebarFeed";
 import { useEffect, useState } from "react";
-import mascota1 from "../../public/img/mascota1.jpg";
 
 export default function Feed() {
     const { mascotas } = usePetgram();

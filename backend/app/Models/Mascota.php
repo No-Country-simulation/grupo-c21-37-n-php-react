@@ -37,4 +37,9 @@ class Mascota extends Model
         return $this->hasMany(FotoMascota::class);
     }
 
+    public function getRouteKeyName()
+    {
+        return 'id';
+    }
+
 }

@@ -25,7 +25,7 @@ class MascotasSeeder extends Seeder
                 'microchip' => true,
                 'descripcion' => 'Perro amigable y juguetón',
                 'estado' => 'perdido',
-                'user_id' => 3,
+                'user_id' => 1,
             ],
             [
                 'nombre' => 'Michi',
@@ -37,7 +37,7 @@ class MascotasSeeder extends Seeder
                 'microchip' => false,
                 'descripcion' => 'Gata curiosa y traviesa',
                 'estado' => 'encontrado',
-                'user_id' => 3,
+                'user_id' => 1,
             ],
             [
                 'nombre' => 'Max',
@@ -49,7 +49,7 @@ class MascotasSeeder extends Seeder
                 'microchip' => false,
                 'descripcion' => 'Muy amigable con los niños',
                 'estado' => 'perdido',
-                'user_id' => 3,
+                'user_id' => 1,
             ],
             [
                 'nombre' => 'Nala',
@@ -61,7 +61,7 @@ class MascotasSeeder extends Seeder
                 'microchip' => true,
                 'descripcion' => 'Gata tranquila y cariñosa',
                 'estado' => 'encontrado',
-                'user_id' => 3,
+                'user_id' => 1,
             ],
             [
                 'nombre' => 'Rocky',
@@ -73,7 +73,7 @@ class MascotasSeeder extends Seeder
                 'microchip' => true,
                 'descripcion' => 'Perro fuerte y protector',
                 'estado' => 'perdido',
-                'user_id' => 3,
+                'user_id' => 1,
             ],
             [
                 'nombre' => 'Simba',
@@ -85,7 +85,7 @@ class MascotasSeeder extends Seeder
                 'microchip' => false,
                 'descripcion' => 'Le gusta dormir mucho',
                 'estado' => 'encontrado',
-                'user_id' => 3,
+                'user_id' => 1,
             ],
             [
                 'nombre' => 'Luna',
@@ -97,7 +97,7 @@ class MascotasSeeder extends Seeder
                 'microchip' => true,
                 'descripcion' => 'Perra muy enérgica',
                 'estado' => 'perdido',
-                'user_id' => 3,
+                'user_id' => 1,
             ],
             [
                 'nombre' => 'Bella',
@@ -109,7 +109,7 @@ class MascotasSeeder extends Seeder
                 'microchip' => true,
                 'descripcion' => 'Gata muy elegante y tranquila',
                 'estado' => 'encontrado',
-                'user_id' => 3,
+                'user_id' => 1,
             ],
             [
                 'nombre' => 'Toby',
@@ -121,7 +121,7 @@ class MascotasSeeder extends Seeder
                 'microchip' => true,
                 'descripcion' => 'Perro cariñoso y fiel',
                 'estado' => 'perdido',
-                'user_id' => 3,
+                'user_id' => 1,
             ],
         ]);
     }
