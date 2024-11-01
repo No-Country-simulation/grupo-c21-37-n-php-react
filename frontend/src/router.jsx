@@ -9,6 +9,7 @@ import SobreNosotros from "./views/SobreNosotros";
 import MisMascotas from "./views/User/MisMascotas";
 import MisDatos from "./views/User/MisDatos";
 import ReportarMascota from "./views/User/ReportarMascota";
+import MascotaPage from "./views/MascotaPage";
 
 const router = createBrowserRouter([
     {
@@ -20,45 +21,50 @@ const router = createBrowserRouter([
                 element: <LandingPage />
             },
             {
-                path: '/nosotros',
+                path: 'nosotros',
                 element: <SobreNosotros />
             },
             {
-                path: '/perdidos',
+                path: 'perdidos',
                 element: <Feed />
             },
             {
-                path: '/auth',
-                element: <AuthLayout />,
-                children: [
-                    {
-                        path: '/auth/registrarse',
-                        element: <Registro />
-                    },
-                    {
-                        path: '/auth/login',
-                        element: <Login />
-                    }
-                ]
+                path: 'perdidos/:id',
+                element: <MascotaPage />
             },
-        ]},
             {
-                path: '/perfil',
-                element: <Layout />,
+                path: 'perfil',
                 children: [
                     {
-                        path: '/perfil/mis-mascotas',
+                        path: 'mis-mascotas',
                         element: <MisMascotas />
                     },
                     {
-                        path: '/perfil/mis-datos',
+                        path: 'mis-datos',
                         element: <MisDatos />
-                    },                    {
-                        path: '/perfil/reportar-mascota',
+                    },
+                    {
+                        path: 'reportar-mascota',
                         element: <ReportarMascota />
                     }
                 ]
             }
-])
+        ]
+    },
+    {
+        path: '/auth',
+        element: <AuthLayout />,
+        children: [
+            {
+                path: 'registrarse',
+                element: <Registro />
+            },
+            {
+                path: 'login',
+                element: <Login />
+            }
+        ]
+    }
+]);
 
-export default router
+export default router;

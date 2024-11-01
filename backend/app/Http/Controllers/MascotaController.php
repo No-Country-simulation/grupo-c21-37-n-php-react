@@ -72,11 +72,10 @@ class MascotaController extends Controller
     /**
      * Display the specified resource.
      */
-public function show(Mascota $mascota)
-{
-    dd($mascota);
-}
-
+    public function show(Mascota $mascota)
+    {
+        return response()->json($mascota);
+    }
 
     /**
      * Update the specified resource in storage.
