@@ -1,7 +1,7 @@
 import { useState } from 'react';
-import Mascota1 from "../../../public/img/mascota1.jpg"
-import Mascota2 from "../../../public/img/mascota2.jpg";
-import Mascota3 from "../../../public/img/mascota3.jpg";
+import Mascota1 from "/img/mascota1.jpg";
+import Mascota2 from "/img/mascota2.jpg";
+import Mascota3 from "/img/mascota3.jpg";
 import { useAuth } from "../../hooks/useAuth";
 
 export default function MisMascotas() {

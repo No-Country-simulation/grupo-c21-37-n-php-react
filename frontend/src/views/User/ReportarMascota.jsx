@@ -207,7 +207,7 @@ const ReportarMascota = () => {
     </label>
   </div>
 </div>
-{/* Botones al final del formulario en ancho completo */}
+{/* Botones al final del formulario en ancho completo ..*/}
 <div className="form-buttons mt-4">
       <button type="button" className="btn btn-secondary me-3">Cancelar</button>
       <button type="submit" className="btn btn-primary">Guardar cambios</button>
